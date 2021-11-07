@@ -1,0 +1,17 @@
+Index: freeradius-server-2.2.5/src/modules/rlm_ldap/configure.in
+===================================================================
+--- freeradius-server-2.2.5.orig/src/modules/rlm_ldap/configure.in	2018-02-27 13:50:06.175033823 -0800
++++ freeradius-server-2.2.5/src/modules/rlm_ldap/configure.in	2018-02-27 13:50:54.202992555 -0800
+@@ -80,10 +80,10 @@
+ 	if test "x$rlm_ldap_with_threads" = "xyes"; then
+ 	    AC_CHECK_LIB(pthread, pthread_create,
+ 			 [ LIBS="-lpthread $LIBS" ],
+-			 AC_CHECK_LIB(c_r, pthread_create,
++			 [AC_CHECK_LIB(c_r, pthread_create,
+ 				      [ LIBS="-lc_r $LIBS" ],
+ 				      [ rlm_ldap_with_threads="no" ]
+-				      )
++				      )]
+ 			 )
+ 	fi
+ 

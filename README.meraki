@@ -1,0 +1,4 @@
+To build an image:
+  ./build.sh
+
+Note: tested under Ubuntu 16.04 and 18.04

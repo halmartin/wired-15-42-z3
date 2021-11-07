@@ -1,0 +1,9 @@
+--- a/pppd/plugins/pptp/pptp.c  2018-02-23 16:06:04.919550574 -0800
++++ b/pppd/plugins/pptp/pptp.c  2018-02-23 16:06:10.471546001 -0800
+@@ -47,7 +47,6 @@
+ #include "pathnames.h"
+
+ #include "pptp_callmgr.h"
+-#include <net/if.h>
+ #include <linux/if_ether.h>
+ #include <linux/if_pppox.h>

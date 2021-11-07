@@ -1,0 +1,3 @@
+[submodule "wired-arm-qca-meraki-linux"]
+	path = kernel-sources
+	url = https://github.com/halmartin/wired-arm-qca-meraki-linux.git

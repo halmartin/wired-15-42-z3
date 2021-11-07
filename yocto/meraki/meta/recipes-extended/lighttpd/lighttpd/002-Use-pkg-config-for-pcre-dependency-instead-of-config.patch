@@ -1,0 +1,27 @@
+--- a/configure.ac	2017-11-15 23:14:12.378354702 -0800
++++ b/configure.ac	2017-11-15 23:28:25.756784544 -0800
+@@ -366,16 +366,14 @@
+ AC_MSG_RESULT([$WITH_PCRE])
+ 
+ if test "$WITH_PCRE" != "no"; then
+-  AC_PATH_PROG(PCRECONFIG, pcre-config)
+-
+-  if test x"$PCRECONFIG" != x; then
+-    PCRE_LIB=`$PCRECONFIG --libs`
+-    CPPFLAGS="$CPPFLAGS `$PCRECONFIG --cflags`"
+-    AC_DEFINE([HAVE_LIBPCRE], [1], [libpcre])
+-    AC_DEFINE([HAVE_PCRE_H], [1], [pcre.h])
+-  else
+-     AC_MSG_ERROR([pcre-config not found, install the pcre-devel package or build with --without-pcre])
+-  fi
++  PKG_CHECK_MODULES(PCREPKG, [libpcre], [
++      PCRE_LIB=${PCREPKG_LIBS}
++      CPPFLAGS="$CPPFLAGS ${PCREPKG_CFLAGS}"
++      AC_DEFINE([HAVE_LIBPCRE], [1], [libpcre])
++      AC_DEFINE([HAVE_PCRE_H], [1], [pcre.h])
++  ], [
++      AC_MSG_ERROR([pcre pkgconfig not found, install the pcre-devel package or build with --without-pcre])
++  ])
+ fi
+ 
+ AC_SUBST(PCRE_LIB)

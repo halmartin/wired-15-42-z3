@@ -1,0 +1,13 @@
+#ifndef _MERAKI_BIRD_DEFINES_H_
+#define _MERAKI_BIRD_DEFINES_H_
+
+#define BIRD_EXPORTED_ROUTE_BEGIN 100000
+#define BIRD_EXPORTED_ROUTE_METRIC 100
+#define BIRD_BGP_DEFAULT_HOLD_TIME 240
+
+#define BIRD_EXPORTED_GATEWAY_BEGIN 100000
+
+#define BIRD_ROUTES_EXPORT_FILE  "/tmp/bird_routes_export"
+#define BIRD_ROUTES_JSON_FILE    "/tmp/bird_routes.json"
+
+#endif /* _MERAKI_BIRD_DEFINES_H_ */

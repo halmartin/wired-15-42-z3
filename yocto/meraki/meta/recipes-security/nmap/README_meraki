@@ -1,0 +1,9 @@
+nmap
+----
+
+This nmap recipe is stripped out of meta-security layer
+  https://git.yoctoproject.org/git/meta-security
+
+For simplicity, I just copy to meta-meraki but if more
+recipes are to be used from meta-security -- consider
+reworking this directory

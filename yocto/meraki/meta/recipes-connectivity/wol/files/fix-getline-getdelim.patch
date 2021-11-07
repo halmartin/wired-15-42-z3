@@ -1,0 +1,37 @@
+diff --git a/lib/getline.c b/lib/getline.c
+index e2eda9d..03407fd 100644
+--- a/lib/getline.c
++++ b/lib/getline.c
+@@ -44,16 +44,4 @@ getline (char **lineptr, size_t *n, FILE *stream)
+ #else /* ! have getdelim */
+ 
+ # include "getstr.h"
+-
+-ssize_t
+-getline (char **lineptr, size_t *n, FILE *stream)
+-{
+-  return getstr (lineptr, n, stream, '\n', 0, 0);
+-}
+-
+-ssize_t
+-getdelim (char **lineptr, size_t *n, int delimiter, FILE *stream)
+-{
+-  return getstr (lineptr, n, stream, delimiter, 0, 0);
+-}
+ #endif
+diff --git a/lib/getline.h b/lib/getline.h
+index 991184c..75ba57a 100644
+--- a/lib/getline.h
++++ b/lib/getline.h
+@@ -28,11 +28,6 @@ Foundation, Inc., 59 Temple Place - Suite 330, Boston, MA 02111-1307, USA.  */
+ # endif
+ 
+ # if __GLIBC__ < 2
+-int
+-getline PARAMS ((char **_lineptr, size_t *_n, FILE *_stream));
+-
+-int
+-getdelim PARAMS ((char **_lineptr, size_t *_n, int _delimiter, FILE *_stream));
+ # endif
+ 
+ #endif /* not GETLINE_H_ */

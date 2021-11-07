@@ -1,0 +1,192 @@
+diff --git a/config.sub b/config.sub
+index 1c366df..4932585 100755
+--- a/Samba/source/config.sub
++++ b/Samba/source/config.sub
+@@ -293,11 +293,6 @@ case $basic_machine in
+ 	i*86 | x86_64)
+ 	  basic_machine=$basic_machine-pc
+ 	  ;;
+-	# Object if more than one company name word.
+-	*-*-*)
+-		echo Invalid configuration \`$1\': machine \`$basic_machine\' not recognized 1>&2
+-		exit 1
+-		;;
+ 	# Recognize the basic CPU types with company name.
+ 	580-* \
+ 	| a29k-* \
+@@ -305,6 +300,7 @@ case $basic_machine in
+ 	| alpha64-* | alpha64ev[4-8]-* | alpha64ev56-* | alpha64ev6[78]-* \
+ 	| alphapca5[67]-* | alpha64pca5[67]-* | arc-* \
+ 	| arm-*  | armbe-* | armle-* | armeb-* | armv*-* \
++    | aarch64* \
+ 	| avr-* \
+ 	| bfin-* | bs2000-* \
+ 	| c[123]* | c30-* | [cjt]90-* | c4x-* | c54x-* | c55x-* | c6x-* \
+@@ -1182,6 +1178,7 @@ case $os in
+ 	      | -chorusos* | -chorusrdb* \
+ 	      | -cygwin* | -pe* | -psos* | -moss* | -proelf* | -rtems* \
+ 	      | -mingw32* | -linux-gnu* | -linux-uclibc* | -uxpv* | -beos* | -mpeix* | -udk* \
++          | -musl* \
+ 	      | -interix* | -uwin* | -mks* | -rhapsody* | -darwin* | -opened* \
+ 	      | -openstep* | -oskit* | -conix* | -pw32* | -nonstopux* \
+ 	      | -storm-chaos* | -tops10* | -tenex* | -tops20* | -its* \
+diff --git a/lib/json/config.sub b/lib/json/config.sub
+index 87a1ee4..438e206 100755
+--- a/Samba/source/lib/json/config.sub
++++ b/Samba/source/lib/json/config.sub
+@@ -287,11 +287,6 @@ case $basic_machine in
+ 	i*86 | x86_64)
+ 	  basic_machine=$basic_machine-pc
+ 	  ;;
+-	# Object if more than one company name word.
+-	*-*-*)
+-		echo Invalid configuration \`$1\': machine \`$basic_machine\' not recognized 1>&2
+-		exit 1
+-		;;
+ 	# Recognize the basic CPU types with company name.
+ 	580-* \
+ 	| a29k-* \
+@@ -299,6 +294,7 @@ case $basic_machine in
+ 	| alpha64-* | alpha64ev[4-8]-* | alpha64ev56-* | alpha64ev6[78]-* \
+ 	| alphapca5[67]-* | alpha64pca5[67]-* | arc-* \
+ 	| arm-*  | armbe-* | armle-* | armeb-* | armv*-* \
++    | aarch64* \
+ 	| avr-* \
+ 	| bfin-* | bs2000-* \
+ 	| c[123]* | c30-* | [cjt]90-* | c4x-* | c54x-* | c55x-* | c6x-* \
+@@ -1176,6 +1172,7 @@ case $os in
+ 	      | -chorusos* | -chorusrdb* \
+ 	      | -cygwin* | -pe* | -psos* | -moss* | -proelf* | -rtems* \
+ 	      | -mingw32* | -linux-gnu* | -linux-uclibc* | -uxpv* | -beos* | -mpeix* | -udk* \
++          | -musl* \
+ 	      | -interix* | -uwin* | -mks* | -rhapsody* | -darwin* | -opened* \
+ 	      | -openstep* | -oskit* | -conix* | -pw32* | -nonstopux* \
+ 	      | -storm-chaos* | -tops10* | -tenex* | -tops20* | -its* \
+diff --git a/lib/ldb/config.sub b/lib/ldb/config.sub
+index 1c366df..4932585 100755
+--- a/Samba/source/lib/ldb/config.sub
++++ b/Samba/source/lib/ldb/config.sub
+@@ -293,11 +293,6 @@ case $basic_machine in
+ 	i*86 | x86_64)
+ 	  basic_machine=$basic_machine-pc
+ 	  ;;
+-	# Object if more than one company name word.
+-	*-*-*)
+-		echo Invalid configuration \`$1\': machine \`$basic_machine\' not recognized 1>&2
+-		exit 1
+-		;;
+ 	# Recognize the basic CPU types with company name.
+ 	580-* \
+ 	| a29k-* \
+@@ -305,6 +300,7 @@ case $basic_machine in
+ 	| alpha64-* | alpha64ev[4-8]-* | alpha64ev56-* | alpha64ev6[78]-* \
+ 	| alphapca5[67]-* | alpha64pca5[67]-* | arc-* \
+ 	| arm-*  | armbe-* | armle-* | armeb-* | armv*-* \
++    | aarch64* \
+ 	| avr-* \
+ 	| bfin-* | bs2000-* \
+ 	| c[123]* | c30-* | [cjt]90-* | c4x-* | c54x-* | c55x-* | c6x-* \
+@@ -1182,6 +1178,7 @@ case $os in
+ 	      | -chorusos* | -chorusrdb* \
+ 	      | -cygwin* | -pe* | -psos* | -moss* | -proelf* | -rtems* \
+ 	      | -mingw32* | -linux-gnu* | -linux-uclibc* | -uxpv* | -beos* | -mpeix* | -udk* \
++          | -musl* \
+ 	      | -interix* | -uwin* | -mks* | -rhapsody* | -darwin* | -opened* \
+ 	      | -openstep* | -oskit* | -conix* | -pw32* | -nonstopux* \
+ 	      | -storm-chaos* | -tops10* | -tenex* | -tops20* | -its* \
+diff --git a/lib/replace/config.sub b/lib/replace/config.sub
+index 1c366df..4932585 100755
+--- a/Samba/source/lib/replace/config.sub
++++ b/Samba/source/lib/replace/config.sub
+@@ -293,11 +293,6 @@ case $basic_machine in
+ 	i*86 | x86_64)
+ 	  basic_machine=$basic_machine-pc
+ 	  ;;
+-	# Object if more than one company name word.
+-	*-*-*)
+-		echo Invalid configuration \`$1\': machine \`$basic_machine\' not recognized 1>&2
+-		exit 1
+-		;;
+ 	# Recognize the basic CPU types with company name.
+ 	580-* \
+ 	| a29k-* \
+@@ -305,6 +300,7 @@ case $basic_machine in
+ 	| alpha64-* | alpha64ev[4-8]-* | alpha64ev56-* | alpha64ev6[78]-* \
+ 	| alphapca5[67]-* | alpha64pca5[67]-* | arc-* \
+ 	| arm-*  | armbe-* | armle-* | armeb-* | armv*-* \
++    | aarch64* \
+ 	| avr-* \
+ 	| bfin-* | bs2000-* \
+ 	| c[123]* | c30-* | [cjt]90-* | c4x-* | c54x-* | c55x-* | c6x-* \
+@@ -1182,6 +1178,7 @@ case $os in
+ 	      | -chorusos* | -chorusrdb* \
+ 	      | -cygwin* | -pe* | -psos* | -moss* | -proelf* | -rtems* \
+ 	      | -mingw32* | -linux-gnu* | -linux-uclibc* | -uxpv* | -beos* | -mpeix* | -udk* \
++          | -musl* \
+ 	      | -interix* | -uwin* | -mks* | -rhapsody* | -darwin* | -opened* \
+ 	      | -openstep* | -oskit* | -conix* | -pw32* | -nonstopux* \
+ 	      | -storm-chaos* | -tops10* | -tenex* | -tops20* | -its* \
+diff --git a/lib/talloc/config.sub b/lib/talloc/config.sub
+index 1c366df..4932585 100755
+--- a/Samba/source/lib/talloc/config.sub
++++ b/Samba/source/lib/talloc/config.sub
+@@ -293,11 +293,6 @@ case $basic_machine in
+ 	i*86 | x86_64)
+ 	  basic_machine=$basic_machine-pc
+ 	  ;;
+-	# Object if more than one company name word.
+-	*-*-*)
+-		echo Invalid configuration \`$1\': machine \`$basic_machine\' not recognized 1>&2
+-		exit 1
+-		;;
+ 	# Recognize the basic CPU types with company name.
+ 	580-* \
+ 	| a29k-* \
+@@ -305,6 +300,7 @@ case $basic_machine in
+ 	| alpha64-* | alpha64ev[4-8]-* | alpha64ev56-* | alpha64ev6[78]-* \
+ 	| alphapca5[67]-* | alpha64pca5[67]-* | arc-* \
+ 	| arm-*  | armbe-* | armle-* | armeb-* | armv*-* \
++    | aarch64* \
+ 	| avr-* \
+ 	| bfin-* | bs2000-* \
+ 	| c[123]* | c30-* | [cjt]90-* | c4x-* | c54x-* | c55x-* | c6x-* \
+@@ -1182,6 +1178,7 @@ case $os in
+ 	      | -chorusos* | -chorusrdb* \
+ 	      | -cygwin* | -pe* | -psos* | -moss* | -proelf* | -rtems* \
+ 	      | -mingw32* | -linux-gnu* | -linux-uclibc* | -uxpv* | -beos* | -mpeix* | -udk* \
++          | -musl* \
+ 	      | -interix* | -uwin* | -mks* | -rhapsody* | -darwin* | -opened* \
+ 	      | -openstep* | -oskit* | -conix* | -pw32* | -nonstopux* \
+ 	      | -storm-chaos* | -tops10* | -tenex* | -tops20* | -its* \
+diff --git a/lib/tdb/config.sub b/lib/tdb/config.sub
+index 1c366df..4932585 100755
+--- a/Samba/source/lib/tdb/config.sub
++++ b/Samba/source/lib/tdb/config.sub
+@@ -293,11 +293,6 @@ case $basic_machine in
+ 	i*86 | x86_64)
+ 	  basic_machine=$basic_machine-pc
+ 	  ;;
+-	# Object if more than one company name word.
+-	*-*-*)
+-		echo Invalid configuration \`$1\': machine \`$basic_machine\' not recognized 1>&2
+-		exit 1
+-		;;
+ 	# Recognize the basic CPU types with company name.
+ 	580-* \
+ 	| a29k-* \
+@@ -305,6 +300,7 @@ case $basic_machine in
+ 	| alpha64-* | alpha64ev[4-8]-* | alpha64ev56-* | alpha64ev6[78]-* \
+ 	| alphapca5[67]-* | alpha64pca5[67]-* | arc-* \
+ 	| arm-*  | armbe-* | armle-* | armeb-* | armv*-* \
++    | aarch64* \
+ 	| avr-* \
+ 	| bfin-* | bs2000-* \
+ 	| c[123]* | c30-* | [cjt]90-* | c4x-* | c54x-* | c55x-* | c6x-* \
+@@ -1182,6 +1178,7 @@ case $os in
+ 	      | -chorusos* | -chorusrdb* \
+ 	      | -cygwin* | -pe* | -psos* | -moss* | -proelf* | -rtems* \
+ 	      | -mingw32* | -linux-gnu* | -linux-uclibc* | -uxpv* | -beos* | -mpeix* | -udk* \
++          | -musl* \
+ 	      | -interix* | -uwin* | -mks* | -rhapsody* | -darwin* | -opened* \
+ 	      | -openstep* | -oskit* | -conix* | -pw32* | -nonstopux* \
+ 	      | -storm-chaos* | -tops10* | -tenex* | -tops20* | -its* \

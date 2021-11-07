@@ -1,0 +1,10 @@
+--- a/pppd/plugins/rp-pppoe/pppoe.h	2019-02-15 19:39:56.129794645 -0800
++++ b/pppd/plugins/rp-pppoe/pppoe.h	2019-02-15 19:40:15.709987286 -0800
+@@ -87,6 +87,7 @@
+ #endif
+ 
+ #include <linux/in.h>
++#include <linux/in6.h>
+ 
+ 
+ 
