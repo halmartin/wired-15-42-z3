@@ -1,5 +1,7 @@
 #!/bin/bash -e
 
+export LANG=en_US.UTF-8
+
 CURRENT_DIR=$PWD
 trap "{ E_CODE=$?; cd "$CURRENT_DIR"; exit $E_CODE; }" SIGINT SIGTERM ERR EXIT
 
